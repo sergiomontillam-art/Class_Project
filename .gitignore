@@ -4,4 +4,3 @@ ZooSpecPhotoDR19_torradeflot.csv
 __pycache__/
 .pytest_cache/
 *.egg-info/
-docs/build/
