@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "galaxy-downloader"
+version = "0.1.0"
+description = "Download galaxy images using HiPS2FITS API"
+authors = [{name = "Your Name", email = "you@example.com"}]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "requests",
+    "pandas",
+    "tqdm"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "pytest-cov>=5.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [ "mod" ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-v"

@@ -1,0 +1,7 @@
+galaxy_monoc_jpgs/
+galaxy_color_cutouts/
+ZooSpecPhotoDR19_torradeflot.csv
+__pycache__/
+.pytest_cache/
+*.egg-info/
+docs/build/
