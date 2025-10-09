@@ -19,6 +19,7 @@ def read_data():
     and stores the pixel data along with corresponding filenames (without extension) in a pandas DataFrame.
     The DataFrame is saved as 'prePCA_data.csv' for further processing (e.g., PCA).
     Prints progress every 1000 images processed.
+
     Returns:
         pd.DataFrame: DataFrame containing flattened pixel data with filenames as the first column ('objid').
     """
@@ -52,6 +53,7 @@ def read_data():
 def PCA_analysis():
     """
     Performs Principal Component Analysis (PCA) on a dataset loaded from 'prePCA_data.csv', retaining enough components to explain 95% of the variance.
+    
     The function:
     - Loads the dataset and separates the 'objid' column (identifiers) from the feature data.
     - Standardizes the feature data.
@@ -59,6 +61,7 @@ def PCA_analysis():
     - Prints the number of principal components required to reach 95% variance.
     - Creates a new DataFrame containing the principal components and the original identifiers.
     - Saves the resulting DataFrame to 'postPCA_data.csv'.
+
     Returns:
         None
     """
@@ -98,6 +101,7 @@ def concatenate_data():
     Reads two CSV files, selects relevant columns, ensures 'objid' is of string type,
     and merges the dataframes on the 'objid' column using an inner join. The merged
     dataframe is saved to 'merged_data.csv' and returned.
+
     Returns:
         pandas.DataFrame: The merged dataframe containing columns from both input files.
     """
@@ -125,6 +129,7 @@ def custom_LinearSVC():
     4. Trains a LinearSVC model with balanced class weights.
     5. Evaluates the model on the test set and prints the accuracy score.
     6. Computes and displays the confusion matrix as a heatmap.
+
     Returns:
         None
     """
@@ -168,6 +173,7 @@ def custom_LinearSVC():
 def pca_plot():
     """
     Performs Principal Component Analysis (PCA) on a preprocessed dataset and visualizes the cumulative explained variance.
+
     This function:
         - Loads a CSV file named 'prePCA_data.csv' with an 'objid' column.
         - Removes the 'objid' column from the dataset.
@@ -175,6 +181,7 @@ def pca_plot():
         - Fits a PCA model to the standardized data.
         - Calculates and prints the number of principal components required to retain at least 95% of the variance.
         - Plots the cumulative explained variance as a function of the number of PCA components, highlighting the 95% threshold.
+
     Returns:
         None
     """

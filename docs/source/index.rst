@@ -22,3 +22,9 @@ Module Reference
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+.. automodule:: ML_mod
+   :members:
+   :undoc-members:
+   :show-inheritance:
