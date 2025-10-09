@@ -110,9 +110,6 @@ def concatenate_data():
     df1['objid'] = df1['objid'].astype(str)
     df2['objid'] = df2['objid'].astype(str)
 
-    print(df1)
-    print(df2)
-
     merged_df = pd.merge(df1, df2, on="objid", how="inner")
     merged_df.to_csv("merged_data.csv", index=False)
     return merged_df
@@ -147,7 +144,7 @@ def custom_LinearSVC():
     X_test_scaled = scaler.transform(X_test)
 
 
-    svm_model = LinearSVC(max_iter=10000, class_weight='balanced', C=1.0, random_state=42)
+    svm_model = LinearSVC(max_iter=10000, dual=False, class_weight='balanced', C=1.0, random_state=42)
     svm_model.fit(X_train_scaled, y_train)
 
     y_prediction = svm_model.predict(X_test_scaled)
